@@ -282,11 +282,25 @@ function tabClick(self) {
 }
 function reloadNodes(jsonstring, btnreloadDom) {
   let jsonObj = JSON.parse(jsonstring);
+  let arr = [];
+  Object.keys(jsonObj).forEach(function (key) {
+    const item = {
+      ...jsonObj[key],
+      key,
+    };
+    arr.push(item);
+  });
+  arr.sort((a, b) => {
+    return a?.order - b?.order;
+  });
+
   let tabs = document.createElement("div");
   let tabnav = document.createElement("div");
   let contentContainer = document.createElement("div");
   let count = 0;
-  Object.keys(jsonObj).forEach(function (key) {
+  arr.forEach((item, index) => {
+    const { order, key, ...other } = item;
+    const current = {};
     let tabbtn = CreateEle("button", tabnav, tabButtonCss, key);
     tabbtn.dataset.tabitem = count;
     tabbtn.addEventListener("click", () => {
@@ -299,9 +313,25 @@ function reloadNodes(jsonstring, btnreloadDom) {
       tabbtn.classList.add("selected");
       tabitem.classList.remove("six-hide");
     }
-    traverse(jsonObj[key], content, btnreloadDom.dataset.page);
+    traverse(other, content, btnreloadDom.dataset.page);
     count++;
   });
+  // Object.keys(jsonObj).forEach(function (key) {
+  //   let tabbtn = CreateEle("button", tabnav, tabButtonCss, key);
+  //   tabbtn.dataset.tabitem = count;
+  //   tabbtn.addEventListener("click", () => {
+  //     tabClick(tabbtn);
+  //   });
+  //   let tabitem = CreateEle("div", contentContainer, "tab-item six-hide", "");
+  //   tabitem.dataset.tabitem = count;
+  //   let content = CreateEle("div", tabitem, "oldsix-content", "");
+  //   if (count == 0) {
+  //     tabbtn.classList.add("selected");
+  //     tabitem.classList.remove("six-hide");
+  //   }
+  //   traverse(jsonObj[key], content, btnreloadDom.dataset.page);
+  //   count++;
+  // });
 
   setCss(tabs, `oldsix-tabs gradio-tabs ${tabButtonCss}`);
   setCss(tabnav, `oldsix-tab-nav scroll-hide ${tabButtonCss}`);
@@ -314,6 +344,7 @@ function reloadNodes(jsonstring, btnreloadDom) {
 
 async function loadCustomUI(callback) {
   let jsonstr = await getJsonStr();
+
   if (jsonstr) {
     reloadNodes(jsonstr, Elements.btnReload[0]);
     reloadNodes(jsonstr, Elements.btnReload[1]);

@@ -1,6 +1,10 @@
 ﻿{
+  "order": "1",
   "halara训练的": {
-    "amanda": "<amanda>",
-    "katy": "<katy>"
+    "new_amanda": "<lora:new_amanda:0.8> ",
+    "924katy-5": "<lora:924katy-5:0.8>",
+    "924katy-9": "<lora:924katy-9:0.8>",
+    "addDetailXL": "<lora:addDetailXL:0.8>",
+    "DashaTaranXL": " <lora:DashaTaranXL:0.8>"
   }
 }

@@ -21,7 +21,6 @@ def LoadTagsFile():
     loadjsonfiles(path2, dic)
     traverse_dict(dic)
     obj = json.dumps(dic, ensure_ascii=False)
-
     return obj
 
 
@@ -33,6 +32,7 @@ def loadjsonfiles(path, dic):
             filename = filepath[filepath.rindex("/") + 1 : -5]
             with open(filepath, "r", encoding="utf-8-sig") as f:
                 res = json.loads(f.read())
+                print(res, "resresresresres")
                 dic[filename] = res
 
 
@@ -166,39 +166,6 @@ class Script(scripts.Script):
 
                 with gr.Column(scale=4, elem_id="oldsix-optit"):
                     gr.HTML('<p class="oldsix-classes-shop"></p>')
-                with gr.Accordion(label="随机灵感", open=False):
-                    rdtextareaEn = gr.TextArea(
-                        label="英文预览框", elem_id="randomTextEn", lines=3, visible=False
-                    )
-                    rdtextareaZh = gr.TextArea(
-                        label="预览框", elem_id="randomTextZh", lines=3, interactive=False
-                    )
-                    with gr.Row():
-                        with gr.Column(scale=4):
-                            txtstart = gr.Textbox(
-                                placeholder="开头占位提示词",
-                                show_label=False,
-                                elem_classes="oldsix-txt-start",
-                            )
-                        with gr.Column(scale=4):
-                            txtend = gr.Textbox(
-                                placeholder="结尾占位提示词",
-                                show_label=False,
-                                elem_classes="oldsix-txt-end",
-                            )
-                    with gr.Row():
-                        with gr.Column(scale=4):
-                            btnRandom = gr.Button("随机灵感关键词", variant="primary")
-                        with gr.Column(scale=4):
-                            gr.Button(
-                                "分类组合随机", variant="primary", elem_classes="btn-crandom"
-                            )
-                        with gr.Column(scale=4):
-                            btnsend = gr.Button(
-                                "发送到提示词框",
-                                variant="primary",
-                                elem_classes="oldsix-btnSend",
-                            )
 
         def tanslatePromp(text):
             en = tanslate(text)
