@@ -1,10 +1,13 @@
 ﻿{
   "order": "1",
   "正向填充": {
+    "Lia": "lia,cinematic photo ,look at viewer, grey background,grin,. 35mm photograph, film, bokeh,professional,4k, highly detailed,<lora:lia:0.8>",
+    "Mali": "Mali,cinematic photo ,look at viewer, grey background,grin,. 35mm photograph, film, bokeh,professional,4k, highly detailed,<lora:1026Mali_v1-000009:0.8>",
     "Amanda": "<lora:new_amanda:0.8> a 24 years old lady , in the studio, street photography, highly realistic skin, RAW photo, 8k uhd, high quality, Fujifilm XT3, smile, look at viewer, grey background,outdoor Light, skin texture ",
-    "Tijana": "<lora:Tijana_1030:0.8> cinematic photo Mid-shot portrait of a beautiful (woman) in her 24s , breast, long hair, grin,half body,. 35mm photograph, film, bokeh, professional, grey background,4k, highly detailed ",
+    "Tijana": "a 24 years old lady ,in the studio, highly realistic skin, long hair,braid,RAW photo, 8k uhd, high quality, Fujifilm XT3, smile, grey background,outdoor Light, skin texture,small <lora:Tijana:0.8>",
     "Katy": "<lora:katy:0.8> Katy,cinematic photo ,look at viewer, grey background,grin,. 35mm photograph, film, bokeh,professional,4k, highly detailed ",
-    "amanda_1025": "<lora:1025_amanda:0.8> cinematic photo Mid-shot portrait of a beautiful (woman) in her 24s , breast, yoga sport,long hair, grin,half body,. 35mm photograph, film, bokeh, professional, grey background,4k, highly detailed "
-    
+    "Dash": "a 24 years old lady ,in the studio, highly realistic skin, RAW photo, 8k uhd, high quality, Fujifilm XT3, smile, grey background,outdoor Light, skin texture,small, dasha_taran,<lora:DashaTaranXL:0.8>",
+    "amanda_1025": "<lora:1025_amanda:0.8> cinematic photo Mid-shot portrait of a beautiful (woman) in her 24s , breast, yoga sport,long hair, grin,half body,. 35mm photograph, film, bokeh, professional, grey background,4k, highly detailed ",
+    "Guilhmina_V2":"a 24 years old lady ,in the studio, highly realistic skin, long hair,braid,RAW photo, 8k uhd, high quality, Fujifilm XT3, smile, grey background,outdoor Light, skin texture,small <lora:Guilhmina_v2:0.8>"
   }
 }
